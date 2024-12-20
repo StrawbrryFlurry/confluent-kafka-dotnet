@@ -95,6 +95,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtobufEncryption", "examp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvroGenericMigration", "examples\AvroGenericMigration\AvroGenericMigration.csproj", "{10CD6000-59A3-40C9-905F-20F4EE03C1B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confluent.Kafka.NativeMethodBindingGenerator", "src\Confluent.Kafka.NativeMethodBindingGenerator\Confluent.Kafka.NativeMethodBindingGenerator.csproj", "{ABA48E1B-D476-426A-A116-3664781CE869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confluent.Kafka.NativeMethodBindingGenerator.Tests", "test\Confluent.Kafka.NativeMethodBindingGenerator.Tests\Confluent.Kafka.NativeMethodBindingGenerator.Tests.csproj", "{B4877AF2-91CB-413A-8103-270F62B7B690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -624,6 +628,30 @@ Global
 		{10CD6000-59A3-40C9-905F-20F4EE03C1B4}.Release|x64.Build.0 = Release|Any CPU
 		{10CD6000-59A3-40C9-905F-20F4EE03C1B4}.Release|x86.ActiveCfg = Release|Any CPU
 		{10CD6000-59A3-40C9-905F-20F4EE03C1B4}.Release|x86.Build.0 = Release|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Debug|x64.Build.0 = Debug|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Debug|x86.Build.0 = Debug|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Release|x64.ActiveCfg = Release|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Release|x64.Build.0 = Release|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Release|x86.ActiveCfg = Release|Any CPU
+		{ABA48E1B-D476-426A-A116-3664781CE869}.Release|x86.Build.0 = Release|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Debug|x64.Build.0 = Debug|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Debug|x86.Build.0 = Debug|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Release|x64.ActiveCfg = Release|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Release|x64.Build.0 = Release|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4877AF2-91CB-413A-8103-270F62B7B690}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{09C3255B-1972-4EB8-91D0-FB9F5CD82BCB} = {1EFCD839-0726-4BCE-B745-1E829991B1BC}
@@ -666,5 +694,7 @@ Global
 		{6727B941-3E07-4841-84E0-8EE47E04A3B3} = {9CE4B5F7-9251-4340-BACB-207066A5DBE8}
 		{6988FB1F-3648-4E5E-821F-55D67CA00FD7} = {9CE4B5F7-9251-4340-BACB-207066A5DBE8}
 		{10CD6000-59A3-40C9-905F-20F4EE03C1B4} = {9CE4B5F7-9251-4340-BACB-207066A5DBE8}
+		{ABA48E1B-D476-426A-A116-3664781CE869} = {1EFCD839-0726-4BCE-B745-1E829991B1BC}
+		{B4877AF2-91CB-413A-8103-270F62B7B690} = {90058283-1F8F-465D-89E4-D4374A27E612}
 	EndGlobalSection
 EndGlobal

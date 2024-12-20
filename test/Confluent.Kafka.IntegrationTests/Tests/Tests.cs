@@ -20,20 +20,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Xunit;
 
 
 namespace Confluent.Kafka.IntegrationTests
 {
-    public class GlobalFixture : IDisposable
+    public class GlobalFixture : IAsyncLifetime
     {
         private string bootstrapServers;
 
         public const int partitionedTopicNumPartitions = 2;
 
-        public GlobalFixture()
-        {
+        public string SinglePartitionTopic { get; set; }
+
+        public string PartitionedTopic { get; set; }
+        
+        public async Task InitializeAsync() {
             var assemblyPath = typeof(Tests).GetTypeInfo().Assembly.Location;
             var assemblyDirectory = Path.GetDirectoryName(assemblyPath);
             var jsonPath = Path.Combine(assemblyDirectory, "testconf.json");
@@ -46,24 +50,19 @@ namespace Confluent.Kafka.IntegrationTests
             // Create shared topics that are used by many of the tests.
             using (var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = bootstrapServers }).Build())
             {
-                adminClient.CreateTopicsAsync(new List<TopicSpecification> {
+                await adminClient.CreateTopicsAsync(new List<TopicSpecification> {
                     new TopicSpecification { Name = SinglePartitionTopic, NumPartitions = 1, ReplicationFactor = 1 },
                     new TopicSpecification { Name = PartitionedTopic, NumPartitions = partitionedTopicNumPartitions, ReplicationFactor = 1 }
-                }).Wait();
+                });
             }
         }
-
-        public void Dispose()
-        {
+        
+        public async Task DisposeAsync() {
             using (var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = bootstrapServers }).Build())
             {
-                adminClient.DeleteTopicsAsync(new List<string> { SinglePartitionTopic, PartitionedTopic }).Wait();
+                await adminClient.DeleteTopicsAsync(new List<string> { SinglePartitionTopic, PartitionedTopic });
             }
         }
-
-        public string SinglePartitionTopic { get; set; }
-
-        public string PartitionedTopic { get; set; }
     }
 
     [CollectionDefinition("Global collection")]
